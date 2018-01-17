@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" content="2b38a30e-9e63-448e-a8d7-6430508cf96e">
+    <meta name="_csrf_header" content="X-CSRF-TOKEN">
+    <title><%=htmlWebpackPlugin.options.title%></title>
+    <% if (htmlWebpackPlugin.files.favicon) { %>
+    <link rel="shortcut icon" href="<%=htmlWebpackPlugin.files.favicon%>">
+    <% } %>
+    <% for (var css in htmlWebpackPlugin.options.css) { %>
+    <link href="<%=htmlWebpackPlugin.options.css[css] %>" rel="stylesheet" type="text/css">
+    <% } %>
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" type="text/css">
+    <% } %>
+  </head>
+  <body>
+    <div class="js-react-app"></div>
+    <% if (webpackConfig.devtool) { %>
+    <script type="text/javascript" src="/webpack-dev-server.js"></script>
+    <% } %>
+    <% for (var js in htmlWebpackPlugin.options.js) { %>
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.options.js[js] %>"></script>
+    <% } %>
+  </body>
+</html>

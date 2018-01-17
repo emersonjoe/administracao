@@ -22,5 +22,16 @@ module.exports = {
     },
     resolveLoader: {
         moduleExtensions: ['-loader']
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: resolve('lib', 'shared', 'local-core', 'index.html'),
+            title: 'Administração',
+            css: [
+            ],
+            js: [
+            ]
+        })
+    ]
 }
