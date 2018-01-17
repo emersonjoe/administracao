@@ -1,4 +1,5 @@
 //var webpack = require("webpack");
+console.log('process.env.PORT || 3333', process.env.PORT || 3333)
 module.exports = {
     entry: './app/App.js',
     output: {
