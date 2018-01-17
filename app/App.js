@@ -9,7 +9,6 @@ const Provider = require('react-redux').Provider;
 let store = createStore(reducer)
 
 console.log(store.getState())
-console.log('process.env.PORT', process.env.PORT)
 
 ReactDOM.render(
     <Provider store={store}>
