@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Home from './components/Home';
+import Home from './containers/home';
 import { createStore } from 'redux'
 import reducer from './reducers'
 const Provider = require('react-redux').Provider;

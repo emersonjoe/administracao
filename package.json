@@ -4,9 +4,10 @@
   "description": "sistema de administração",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack/config.dev.js --progress"
   },
-  "author": "",
+  "author": "Emerson Oliveira dos Santos",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
