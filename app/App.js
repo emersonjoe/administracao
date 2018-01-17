@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './containers/home';
 import { createStore } from 'redux'
 import reducer from './reducers'
+import registerServiceWorker from './registerServiceWorker';
 const Provider = require('react-redux').Provider;
 
 let store = createStore(reducer)
@@ -17,3 +18,5 @@ ReactDOM.render(
         </MuiThemeProvider>
     </Provider>
     , document.getElementById('app'));
+
+    registerServiceWorker();
