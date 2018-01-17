@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack/config.dev.js --progress",
-    "postinstall": "webpack -p"
+    "start": "webpack-dev-server --config webpack/config.dev.js --progress"   
   },
   "author": "Emerson Oliveira dos Santos",
   "license": "ISC",
