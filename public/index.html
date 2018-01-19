@@ -1,12 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Webpack Test</title>
-</head>
-<body>
-
-<div id="app"></div>
-<script src="bundle.js"></script>
-</body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Entry module not found: Error: Can't resolve 'html-loader' in 'C:\Users\emers\source\repos\administracao':
+  Error: Can't resolve 'html-loader' in 'C:\Users\emers\source\repos\administracao'
+  
+  - compiler.js:76 
+    [administracao]/[html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:300 compile
+    [administracao]/[webpack]/lib/Compiler.js:300:11
+  
+  - Compiler.js:510 applyPluginsAsync.err
+    [administracao]/[webpack]/lib/Compiler.js:510:14
+  
+  - Tapable.js:202 next
+    [administracao]/[tapable]/lib/Tapable.js:202:11
+  
+  - CachePlugin.js:78 Compiler.<anonymous>
+    [administracao]/[webpack]/lib/CachePlugin.js:78:5
+  
+  - Tapable.js:206 Compiler.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:206:13
+  
+  - Compiler.js:507 compilation.seal.err
+    [administracao]/[webpack]/lib/Compiler.js:507:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:680 self.applyPluginsAsync.err
+    [administracao]/[webpack]/lib/Compilation.js:680:19
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:671 self.applyPluginsAsync.err
+    [administracao]/[webpack]/lib/Compilation.js:671:11
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:666 self.applyPluginsAsync.err
+    [administracao]/[webpack]/lib/Compilation.js:666:10
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:662 sealPart2
+    [administracao]/[webpack]/lib/Compilation.js:662:9
+  
+  - Tapable.js:195 Compilation.applyPluginsAsyncSeries
+    [administracao]/[tapable]/lib/Tapable.js:195:46
+  
+  - Compilation.js:605 Compilation.seal
+    [administracao]/[webpack]/lib/Compilation.js:605:8
+  
+  - Compiler.js:504 applyPluginsParallel.err
+    [administracao]/[webpack]/lib/Compiler.js:504:17
+  
+  - Tapable.js:289 
+    [administracao]/[tapable]/lib/Tapable.js:289:11
+  
+  - Compilation.js:507 _addModuleChain
+    [administracao]/[webpack]/lib/Compilation.js:507:11
+  
+  - Compilation.js:390 errorAndCallback.bail
+    [administracao]/[webpack]/lib/Compilation.js:390:4
+  
+  - Compilation.js:413 moduleFactory.create
+    [administracao]/[webpack]/lib/Compilation.js:413:13
+  
+  - NormalModuleFactory.js:235 factory
+    [administracao]/[webpack]/lib/NormalModuleFactory.js:235:20
+  
+  - NormalModuleFactory.js:60 resolver
+    [administracao]/[webpack]/lib/NormalModuleFactory.js:60:20
+  
+  - NormalModuleFactory.js:191 asyncLib.parallel
+    [administracao]/[webpack]/lib/NormalModuleFactory.js:191:21
+  
+  - async.js:3874 
+    [administracao]/[webpack]/[async]/dist/async.js:3874:9
+  
+  - async.js:473 
+    [administracao]/[webpack]/[async]/dist/async.js:473:16
+  
+  - async.js:1048 iteratorCallback
+    [administracao]/[webpack]/[async]/dist/async.js:1048:13
+  
+  - async.js:958 
+    [administracao]/[webpack]/[async]/dist/async.js:958:16
+  
+  - async.js:3871 
+    [administracao]/[webpack]/[async]/dist/async.js:3871:13
+  
+</pre><script type="text/javascript" src="js/main.js"></script><script type="text/javascript" src="js/main.js"></script>
