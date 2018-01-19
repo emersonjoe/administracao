@@ -4240,17 +4240,27 @@ if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
 }
 
-_reactDom2.default.render(_react2.default.createElement(
-    Provider,
-    { store: store },
-    _react2.default.createElement(
-        _MuiThemeProvider2.default,
-        null,
-        _react2.default.createElement(_home2.default, null)
-    )
-), document.getElementById('app'));
+function run() {
+    //ReactDOM.render(<App />, document.getElementById('app'));
 
-(0, _registerServiceWorker2.default)();
+    _reactDom2.default.render(_react2.default.createElement(
+        Provider,
+        { store: store },
+        _react2.default.createElement(
+            _MuiThemeProvider2.default,
+            null,
+            _react2.default.createElement(_home2.default, null)
+        )
+    ), document.getElementById('app'));
+}
+
+var loadedStates = ['complete', 'loaded', 'interactive'];
+
+if (loadedStates.includes(document.readyState) && document.body) {
+    run();
+} else {
+    window.addEventListener('DOMContentLoaded', run, false);
+}
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
