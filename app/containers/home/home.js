@@ -17,6 +17,8 @@ class Home extends React.Component {
     }
     render() {
         console.log('props', this.props)
+        console.log('params', this.params)
+        
         const titulo = this.props.bar ? this.props.bar.toString() : 'vazio'
         console.log('titulo', titulo)
         //this.props.bar ? this.props.bar :

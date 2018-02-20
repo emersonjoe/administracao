@@ -14,9 +14,16 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Login}/>
       <Route path='/login' component={Login}/>
+      <Route path='/home/:id' component={Child}/>
       <Route path='/home' component={Home}/>
     </Switch>
   </main>
+)     
+
+const Child = ({ match }) => (
+  <div>
+    <h3>ID: {match.params.id}</h3>
+  </div>
 )
 
 export default Main
