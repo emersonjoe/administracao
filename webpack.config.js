@@ -76,6 +76,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             path: buildPath,
             excludeChunks: ['base'],
+            title: 'Administração Estética',
             filename: 'index.html',
             minify: {
                 collapseWhitespace: true,
