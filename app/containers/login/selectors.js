@@ -1,11 +1,10 @@
 import { createSelector } from 'reselect'
 // selector
-const getBar = (state) => {
-
-  return state.todos && state.todos.length && state.todos[0].text
+const isAuthenticated = (state) => {
+  return state.auth && state.auth.isAuthenticated
 }
 // reselect function
-export const getBarState = createSelector(
-  [ getBar ],
-  (bar) => bar
+export const getIsAuthenticated = createSelector(
+  [ isAuthenticated ],
+  (isAuthenticated) => isAuthenticated
 )

@@ -10,37 +10,51 @@ import { browserHistory } from 'react-router';
  * A simple example of `AppBar` with an icon on the right.
  * By default, the left icon is a navigation-menu.
  */
-class Home extends React.Component {
+class Login extends React.Component {
     componentDidMount()
     {
-        console.log('addTodo', this.props.addTodo)
-
-        var today = new Date();
-        var day = today.getDay();
-         this.props.addTodo(today)
     }
+
+    handleClick(event) {
+        console.log('event', event)
+        const username = this.refs.username
+        const password = this.refs.password
+        console.log('username', username.value)
+        const creds = { username: username.value.trim(), password: password.value.trim() }
+        //this.props.onLoginClick(creds)
+        this.props.loginUser(creds)
+      }
+    
+    
+
+
     render() {
+
+        const { errorMessage } = this.props
+
         return (
             <div>
-            <TextField
-              hintText="Usuário"
-            />
-            <br />
-            <TextField
-              hintText="Senha"
-              type="password"
-            />
-             <FlatButton label="Entrar" 
-                onClick={
-                    () => {
-                        this.props.history.push('/home')
-                    }
-                }
+
+
+        <input type='text' ref='username' className="form-control" placeholder='Username'/>
+        <input type='password' ref='password' className="form-control" placeholder='Password'/>
+
+             <Button label="Entrar" 
+                onClick={(event) => this.handleClick(event)}                 
             /> 
+            {errorMessage &&
+            <p >{errorMessage}</p>
+            }
+            
             </div>
             
         )
     }
 }
 
-export default Home
+// Login.propTypes = {
+//     onLoginClick: PropTypes.func.isRequired,
+//     errorMessage: PropTypes.string
+//   }
+
+export default Login

@@ -1,56 +1,42 @@
+import { combineReducers } from 'redux'
 import {
-    ADD_TODO,
-    TOGGLE_TODO,
-    SET_VISIBILITY_FILTER,
-    VisibilityFilters
-  } from './constants'
-  
-  import { combineReducers } from 'redux'
-  //import { handleActions } from 'redux-actions';
+  LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS
+} from './constants'
 
-const { SHOW_ALL } = VisibilityFilters
+// The auth reducer. The starting state sets authentication
+// based on a token being in local storage. In a real app,
+// we would also want a util to check if the token is expired.
+export function auth(state = {
+    isFetching: false,
+    isAuthenticated: localStorage.getItem('id_token') ? true : false
+  }, action) {
 
-export function visibilityFilter(state = SHOW_ALL, action) {
+    console.log('auth(state', action)
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return action.filter
-    default:
-      return state
-  }
-}
-
-export function todos(state = [], action) {
-  switch (action.type) {
-    case ADD_TODO:
-    {
-        console.log('reducer ADD_TODO', ADD_TODO)
-        console.log('action', action)
-        return [
-            ...state,
-            {
-              text: action.text,
-              completed: false
-            }
-          ]
-    }
-
-    case TOGGLE_TODO:
-      return state.map((todo, index) => {
-        if (index === action.index) {
-          return Object.assign({}, todo, {
-            completed: !todo.completed
-          })
-        }
-        return todo
+    case LOGIN_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: true,
+        isAuthenticated: false,
+        user: action.creds
+      })
+    case LOGIN_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        isAuthenticated: true,
+        errorMessage: ''
+      })
+    case LOGIN_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        isAuthenticated: false,
+        errorMessage: action.message
+      })
+    case LOGOUT_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: true,
+        isAuthenticated: false
       })
     default:
       return state
   }
 }
-
-// const todoApp = combineReducers({
-//   visibilityFilter,
-//   todos
-// })
-
-// export default todoApp

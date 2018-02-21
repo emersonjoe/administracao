@@ -2,6 +2,12 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import { connect } from 'react-redux'
 
+
+//import { loginUser, fetchQuote, fetchSecretQuote } from '../actions'
+import Login from '../login'
+import Navbar from '../navbar'
+import Quotes from '../quotes'
+
 /**
  * A simple example of `AppBar` with an icon on the right.
  * By default, the left icon is a navigation-menu.
@@ -9,25 +15,29 @@ import { connect } from 'react-redux'
 class Home extends React.Component {
     componentDidMount()
     {
-        console.log('addTodo', this.props.addTodo)
-
-        var today = new Date();
-        var day = today.getDay();
-         this.props.addTodo(today)
     }
+
     render() {
-        console.log('props', this.props)
-        console.log('params', this.params)
-        
-        const titulo = this.props.bar ? this.props.bar.toString() : 'vazio'
-        console.log('titulo', titulo)
-        //this.props.bar ? this.props.bar :
+        const { dispatch, quote, isAuthenticated, errorMessage, isSecretQuote } = this.props
         return (
-            <AppBar
-            title={titulo}
-            iconClassNameRight="muidocs-icon-navigation-expand-more"
+        <div>
+            <Navbar
+            isAuthenticated={isAuthenticated}
+            errorMessage={errorMessage}
+            dispatch={dispatch}
             />
+            <div className='container'>
+            <Quotes
+                onQuoteClick={() => dispatch(fetchQuote())}
+                onSecretQuoteClick={() => dispatch(fetchSecretQuote())}
+                isAuthenticated={isAuthenticated}
+                quote={quote}
+                isSecretQuote={isSecretQuote}
+            />
+            </div>
+        </div>
         )
+
     }
 }
 

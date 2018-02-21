@@ -20,6 +20,8 @@ export function visibilityFilter(state = SHOW_ALL, action) {
 }
 
 export function todos(state = [], action) {
+
+  console.log('reducer todos')
   switch (action.type) {
     case ADD_TODO:
     {

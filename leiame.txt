@@ -1,0 +1,6 @@
+webpack
+https://medium.com/netscape/webpack-3-react-production-build-tips-d20507dba99a
+
+
+auth jwt
+https://auth0.com/blog/secure-your-react-and-redux-app-with-jwt-authentication/
