@@ -39,9 +39,11 @@ class Login extends React.Component {
         <input type='text' ref='username' className="form-control" placeholder='Username'/>
         <input type='password' ref='password' className="form-control" placeholder='Password'/>
 
-             <Button label="Entrar" 
+             <button label="Entrar" 
                 onClick={(event) => this.handleClick(event)}                 
-            /> 
+            > 
+            Entrar
+            </button>
             {errorMessage &&
             <p >{errorMessage}</p>
             }
