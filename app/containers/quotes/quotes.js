@@ -4,7 +4,7 @@ export default class Quotes extends Component {
 
   render() {
     const { onQuoteClick, onSecretQuoteClick, isAuthenticated, quote, isSecretQuote } = this.props
-
+console.log('quote', quote)
     return (
       <div>
         <div className='col-sm-3'>

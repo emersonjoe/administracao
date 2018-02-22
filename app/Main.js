@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './containers/home';
 import Login from './containers/login';
+import NavBar from './containers/navbar';
 
 // The Main component renders one of the three provided
 // Routes (provided that one matches). Both the /roster
@@ -12,7 +13,7 @@ import Login from './containers/login';
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Login}/>
+      <Route exact path='/' component={NavBar}/>
       <Route path='/login' component={Login}/>
       <Route path='/home/:id' component={Child}/>
       <Route path='/home' component={Home}/>

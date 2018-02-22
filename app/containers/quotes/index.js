@@ -3,12 +3,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Quotes from './quotes'
 import {fetchQuote, fetchSecretQuote} from './actions'
-import { getBarState } from './selectors'
+import { getQuoteState } from './selectors'
 
 
 const mapStateToProps = (state) => {
     return {
-      bar: getBarState(state)
+      quote: getQuoteState(state)
     }
   }
  

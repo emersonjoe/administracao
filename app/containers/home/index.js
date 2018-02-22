@@ -2,18 +2,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Home from './home'
-import {addTodo} from './actions'
-import { getBarState } from './selectors'
+import { getIsAuthenticated } from '../login/selectors'
+import { fetchQuote, fetchSecretQuote } from '../quotes/actions'
 
-console.log('Home', Home)
 const mapStateToProps = (state) => {
     return {
-      bar: getBarState(state)
+      isAuthenticated: getIsAuthenticated(state)
     }
   }
  
 const mapDispatchToProps = {
-    addTodo
+  fetchQuote,
+  fetchSecretQuote
 };
   
 

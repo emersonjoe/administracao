@@ -1,9 +1,10 @@
-const BASE_URL = 'http://localhost:5050/api/'
+export const BASE_URL = 'http://dev-asbpm.ddns.net:8096/'
 
 function callApi(endpoint, authenticated) {
 console.log(endpoint, authenticated)
   let token = localStorage.getItem('access_token') || null
   let config = {}
+  console.log('token', token)
 
   if(authenticated) {
     if(token) {
@@ -15,6 +16,8 @@ console.log(endpoint, authenticated)
       throw "No token saved!"
     }
   }
+
+  console.log('config', config)
 
   return fetch(BASE_URL + endpoint, config)
     .then(response =>

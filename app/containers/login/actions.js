@@ -8,9 +8,10 @@ import {
   LOGOUT_FAILURE
 } from './constants'
 
+import {BASE_URL} from '../../middleware/api'
 
-function requestLogin(creds) {
-  console.log('action requestLogin')
+
+function requestLogin(creds) {  
   return {
     type: LOGIN_REQUEST,
     isFetching: true,
@@ -41,8 +42,6 @@ function loginError(message) {
 
 export function loginUser(creds) {
 
-  console.log('loginUser creds', creds)
-
   var data = JSON.stringify({
     username : creds.username,
     password : creds.password
@@ -60,7 +59,7 @@ export function loginUser(creds) {
     // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
 
-    return fetch('http://localhost:5050/sessions/create', config)
+    return fetch(BASE_URL + 'sessions/create', config)
       .then(response =>
         response.json().then(response => (response))
       ).then((response) =>  {

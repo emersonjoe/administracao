@@ -5,11 +5,14 @@ import {todos ,
 
 
   import {  auth } from './containers/login/reducer'
+  import {  quotes } from './containers/quotes/reducer'
 
 import { createStore } from 'redux'
+
 
 export default combineReducers({
   todos,
   auth,
+  quotes,
   visibilityFilter
 })

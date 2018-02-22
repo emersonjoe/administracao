@@ -3,16 +3,23 @@ import Login from '../login'
 import Logout from '../logout'
 import { loginUser, logoutUser } from '../login/actions'
 import { getBarState } from '../login/selectors'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 
 export default class Navbar extends Component {
 
   render() {
     const { dispatch, isAuthenticated, errorMessage } = this.props
-console.log('isAuthenticated', isAuthenticated)
+
     return (
       <nav className='navbar navbar-default'>
         <div className='container-fluid'>
-          <a className="navbar-brand" href="#">Quotes App</a>
+          <Link className="navbar-brand" to="/home">Home</Link>
           <div className='navbar-form'>
 
             {!isAuthenticated &&

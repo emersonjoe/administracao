@@ -23,6 +23,9 @@ export function quotes(state = {
   quote: '',
   authenticated: false
 }, action) {
+
+  console.log('quotes reducer state', state)
+  console.log('quotes reducer action', action)
 switch (action.type) {
   case QUOTE_REQUEST:
     return Object.assign({}, state, {

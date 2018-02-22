@@ -1,11 +1,10 @@
 import { createSelector } from 'reselect'
 // selector
-const getBar = (state) => {
-
-  return state.todos && state.todos.length && state.todos[0].text
+const getQuote = (state) => {
+  return state.quotes && state.quotes.quote
 }
 // reselect function
-export const getBarState = createSelector(
-  [ getBar ],
-  (bar) => bar
+export const getQuoteState = createSelector(
+  [ getQuote ],
+  (quote) => quote
 )

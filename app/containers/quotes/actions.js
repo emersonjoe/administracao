@@ -5,6 +5,8 @@ import {
    QUOTE_FAILURE
 } from './constants'
 
+import {CALL_API} from '../../middleware/api'
+
 // Uses the API middlware to get a quote
 export function fetchQuote() {
   return {

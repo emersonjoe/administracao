@@ -24,7 +24,7 @@ ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider>
             <BrowserRouter>
-                <Navbar />
+                <Main />
             </ BrowserRouter>
         </MuiThemeProvider>
     </Provider>
